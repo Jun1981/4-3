@@ -16,7 +16,7 @@ public:
 	void Finalize();//終了処理
 
 	//関数
-	void setGh(const TCHAR *);//ghのセッター Dxlib.initが終わってからじゃないとLoadGraphが使えないので
+	void setGh(const char *);//ghのセッター Dxlib.initが終わってからじゃないとLoadGraphが使えないので
 	void setSizeXY(int,int);//サイズ指定
 	
 	
@@ -30,6 +30,7 @@ public:
 	//画像描画関数
 	virtual void draw(int Brightness);//DrawGraph現在位置(透過あり）
 	virtual void draw2(double zoom,int deg,int Brightness);//DrawRotaGraph(); 回転やズームを利用 (倍率、角度）
+	virtual void draw2(int X,int Y,double zoom,int deg,int Brightness);//DrawRotaGraph(); 回転やズームを利用 (倍率、角度） 位置も指定
 
 	//ｹﾞｯﾀｰ
 	inline int getX(){

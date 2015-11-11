@@ -3,6 +3,8 @@
 #include "Image.h"
 #include "Fonts.h"
 
+
+
 void StgSelMain();
 void StgSelInit();
 void StgSelCal();
@@ -27,16 +29,10 @@ namespace stgSel{
 	extern Image fairy;//妖精イメージ
 	extern Image fukidashi;//吹き出し画像クラス
 	extern Image board;//板枠（右上文字背景）クラス
-	extern Fonts fonts;//フォントクラス	
+	//extern Fonts fonts;//フォントクラス	
 	
 };
 
 
 
 
-enum DIFF{
-		easy,
-		normal,
-		hard
-	};
-extern DIFF diff;

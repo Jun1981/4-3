@@ -37,7 +37,7 @@ C_TableMenu::C_TableMenu(
 	setArrayTableXY();
 	setTableInitXY();
 
-		
+
 
 }
 //デストラクタ
@@ -47,7 +47,7 @@ C_TableMenu::~C_TableMenu(){
 }
 ////終了処理
 void C_TableMenu::Finalize(){
-	
+
 	if(tableGh!=0)delete[] tableGh;	
 	if(tableX!=0) delete[] tableX;
 	if(tableY!=0) delete[] tableY;
@@ -104,7 +104,7 @@ void C_TableMenu::calHori(){//横メニューの計算
 	}
 
 	setNowTabXY();//現在テーブル位置をセット
-	
+
 
 }
 //描画
@@ -116,10 +116,10 @@ void C_TableMenu::draw(int row,int col,int Brightness){
 
 //DrawRotaGraph(); 回転やズームを利用 (倍率、角度）
 void C_TableMenu::draw2(int row,int col,double zoom,int deg,int Brightness){
-		SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定
+	SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定
 	DrawRotaGraph(tableX[row][col],tableY[row][col],zoom,(double)(deg/180.0)*3.14,tableGh[row][col],1,0);
 	SetDrawBright(255,255,255);//明るさを元に戻す
-	}
+}
 
 //セッター
 //テーブル左上座標セット
@@ -134,9 +134,13 @@ void C_TableMenu::setNowTabXY(){
 //	nowTabY=dUpLeftY+nRow*tHeight+tHeight/2;
 //
 //}
-void C_TableMenu::setTableGh(int row,int col,char* gPath){
+void C_TableMenu::setTableGh(
+	int row,
+	int col,
+	const char* gPath
+	){
 
-	this->tableGh[row][col]=LoadGraph(gPath,0);
+		this->tableGh[row][col]=LoadGraph(gPath,0);
 }
 
 
@@ -148,7 +152,7 @@ int C_TableMenu::getNowTabY(){
 	return nowTabY;
 }
 int C_TableMenu::getNowCurX(){
-		return nowTabX;
+	return nowTabX;
 }
 int C_TableMenu::getNowCurY(){
 	return nowTabY+tHeight/2;

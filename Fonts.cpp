@@ -14,3 +14,11 @@ void Fonts::deleteFont(){
 		MessageBox(NULL, "remove failure", "", MB_OK);
 	}
 }
+
+void Fonts::crtFHndl(int size,char* fontName){
+		fontHandle.push_back(
+		CreateFontToHandle( fontName,size,1,DX_FONTTYPE_ANTIALIASING_EDGE_4X4)
+		);
+
+  
+}

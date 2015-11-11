@@ -38,7 +38,11 @@ public:
 	void setArrayTableXY();
 
 	void setTableInitXY();//アイテムの初期位置セットｘｙ　何個目のメニューか
-	void setTableGh(int row,int col,char* gPath);
+	void setTableGh(
+		int ,
+		int ,
+		const char* gPath
+		);
 	//
 	void setNowTabXY();//現在のテーブル位置
 	//void setNowCurXY();//カーソル用座標

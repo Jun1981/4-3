@@ -12,7 +12,7 @@ Image::Image(){
 
 }
 //セッター
-void Image::setGh(const TCHAR *str){
+void Image::setGh(const char *str){
 
  gh=LoadGraph(str,0);
 
@@ -48,10 +48,16 @@ void Image::draw(int Brightness){
 	DrawGraph(x,y,gh,1);
 	SetDrawBright(255,255,255);//明るさを元に戻す
 }
-//DrawRotaGraph(); 回転やズームを利用 (倍率、角度）
+//DrawRotaGraph(); 回転やズームを利用 (倍率、角度）クラス内座標を使用
 void Image::draw2(double zoom,int deg,int Brightness){
 		SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定
 	DrawRotaGraph(x,y,zoom,(double)(deg/180.0)*3.14,gh,1,0);
+	SetDrawBright(255,255,255);//明るさを元に戻す
+	}
+
+void Image::draw2(int X,int Y,double zoom,int deg,int Brightness){
+		SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定
+	DrawRotaGraph(X,Y,zoom,(double)(deg/180.0)*3.14,gh,1,0);
 	SetDrawBright(255,255,255);//明るさを元に戻す
 	}
 

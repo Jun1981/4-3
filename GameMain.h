@@ -1,9 +1,9 @@
 
 #pragma once
-#include "C_GameMain.h"
+#include "C_GameSettings.h"
 
 
-extern C_GameMain Game;
+extern C_GameSettings Game;
 
 //‘O•ûéŒ¾
 void GameMain();

@@ -2,7 +2,7 @@
 #include "../DxLib/dxlib.h"
 #include "C_GameSettings.h"
 
-#include "C_GameMain.h"
+#include "C_GameSettings.h"
 
 
 
