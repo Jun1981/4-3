@@ -10,7 +10,9 @@
 ////#include "Title.h"
 
 //#include "key.h"
-C_GameSettings gSet;
+
+
+C_GameSettings Game;
 
 void GameMain();//前方宣言
 
@@ -18,11 +20,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		
 	//
 	
-	gSet.setResoXY(800,600);
+	Game.setResoXY(800,600);//解像度登録
+	
 	
 	//解像度とウィンドウモード
 	ChangeWindowMode(TRUE);                     // ウインドウモードに変更(ただし、２５６色)
-	SetGraphMode(gSet.getResoX(),gSet.getResoY(),32);//画面解像度とカラービット数設定
+	SetGraphMode(Game.getResoX(),Game.getResoY(),32);//画面解像度とカラービット数設定
 	
 
 	if (DxLib_Init() == -1) {                    // ＤＸライブラリ初期化処理

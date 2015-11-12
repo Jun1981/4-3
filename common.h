@@ -1,9 +1,11 @@
 #pragma once
 #include "Fonts.h"
+#include "C_GameSettings.h"
 
 //グローバル
 
 extern Fonts fonts;//フォントクラス
+extern C_GameSettings Game;//ゲームセッティングクラス
 
 //フォントハンドラ
 extern int Uzura16;
@@ -11,6 +13,8 @@ extern int Uzura20;
 extern int Uzura24;
 extern int Uzura30;
 extern int Uzura60;
+
+
 
 
 //define

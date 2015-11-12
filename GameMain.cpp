@@ -13,8 +13,11 @@
 
 #include "CharaSelect.h"
 
+#include "C_MAP.h"
+#include "Game_Board.h"
 
-C_GameSettings Game;
+
+
 Fonts fonts;//フォントクラス
 
 int Uzura16;
@@ -23,8 +26,9 @@ int Uzura24;
 int Uzura30;
 int Uzura60;
 
-void GameMain(){
 
+
+void GameMain(){
 
 
 	key_chk();//キーチェック
@@ -74,6 +78,17 @@ void GameMain(){
 		
 		charSelMain();
 		//DrawString(300,400,"キャラセレクト",GetColor(255,255,255),0);
+
+
+		break;
+
+	case 4://マップ
+			//DrawString(300,400,"キャラセレクト",GetColor(255,255,255),0);
+
+		//DrawStringToHandle(300,400,"マップ",GetColor(255,255,255),Uzura24);
+
+
+		GameBoardMain();
 
 
 		break;

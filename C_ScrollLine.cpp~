@@ -1,0 +1,123 @@
+#include "C_ScrollLine.h"
+#include "../DxLib/DxLib.h"
+
+#include <string.h>
+#include <mbstring.h>
+#include <vector>
+using namespace std;
+//コンストラクタ
+C_ScrollLine::C_ScrollLine(){
+
+	charSpace=10;
+	lineSpace=32;
+
+}
+C_ScrollLine::C_ScrollLine(
+
+		int NumOfLine,//行数
+		int LineSpace,//行間
+		int CharSpace//文字間隔　
+
+		){
+
+	charSpace=CharSpace;
+	lineSpace=LineSpace;
+
+	//numOfLine=NumOfLine;
+
+	//rowNum=RowNum;//行数設定
+	//str= new char*[RowNum];
+
+	//str= new string[RowNum];
+	//int z=0;
+}
+
+
+//関数本体
+void C_ScrollLine::setString(
+		int n,
+		char* STR){		
+	V_Str.push_back(STR);
+	numOfLine++;
+}
+void C_ScrollLine::scrollLine(
+		int X,int Y,//文字開始位置座標
+
+		int fHandle,//フォントハンドル
+
+
+		int Color,//色(デフォルトは白）
+		int Speed,//メッセージスピード
+		int LineSpace//行間
+		){
+		static int S=0;
+		//static  char* STRING;
+
+
+		//speed=Speed;
+
+		if(S==0){spdCnt=Speed;S=1;}//スピード
+
+		//STRING=sTRING;
+		//	V_Str[nowRowNum];
+
+		if(spdCnt>=-10)
+			spdCnt--;//スピードカウントマイナス１
+
+		//static unsigned int i=0;
+		//保存した文字列から一文字ずつ取り出して表示用変数に入れる
+
+		if(nowRowNum<numOfLine){
+			if(spdCnt<=0){
+				if(V_Str[nowRowNum][i]!='\0'){
+					spdCnt=Speed;//リセット
+
+					str[nowRowNum][i]=V_Str[nowRowNum][i];
+					str[nowRowNum][i+1]=V_Str[nowRowNum][i+1];
+					str[nowRowNum][i+2]='\0';
+					i+=2;
+					//	break;
+				}else{
+					spdCnt=Speed;//リセット
+					i=0;
+					nowRowNum++;
+				}
+				//}
+		}		
+		}
+for(int j=0;j<numOfLine;j++){
+	//DrawFormatString(X,Y+lineSpace*j,Color,str[j]);
+	DrawStringToHandle(X,Y+lineSpace*j,str[j],Color,fHandle);
+
+}
+
+
+
+}
+
+
+
+void C_ScrollLine::resetLine(){
+	i=0;
+	nowRowNum=0;
+
+	for(int j=0;j<5;j++){
+		for(int k=0;k<256;k++){
+			str[j][k]='\0';
+		}
+
+	}
+	//tempStr[0]='\0';
+}
+//セッター
+void C_ScrollLine::setCharColor(int R,int G,int B){
+	charColor=GetColor(R,G,B);
+}
+
+//
+//void C_ScrollLine::changeFontHandle(int n){
+//
+//	
+//
+//
+//}

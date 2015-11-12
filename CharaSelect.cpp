@@ -82,7 +82,7 @@ void charSelCal(){
 	charSelMenu->calHori();//カーソル処理
 	if(charSelMenu->getNum()==0){
 		if(key_Trg==0x100){
-			//Game.mode=4;//セレクト画面へ
+			Game.mode=4;//マップ
 			//StgSelFinalize();//終了処理
 		}	
 	}
