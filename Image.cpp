@@ -55,9 +55,9 @@ void Image::draw2(double zoom,int deg,int Brightness){
 	SetDrawBright(255,255,255);//–¾‚é‚³‚ğŒ³‚É–ß‚·
 	}
 
-void Image::draw2(int X,int Y,double zoom,int deg,int Brightness){
+void Image::draw2(int X,int Y,double zoom,int deg,int flip,int Brightness){
 		SetDrawBright(Brightness,Brightness,Brightness);//–¾‚é‚³‚ğİ’è
-	DrawRotaGraph(X,Y,zoom,(double)(deg/180.0)*3.14,gh,1,0);
+	DrawRotaGraph(X,Y,zoom,(double)(deg/180.0)*3.14,gh,1,flip);
 	SetDrawBright(255,255,255);//–¾‚é‚³‚ğŒ³‚É–ß‚·
 	}
 

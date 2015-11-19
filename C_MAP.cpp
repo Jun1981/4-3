@@ -1,8 +1,10 @@
 #include "C_MAP.h"
 
+#include "C_GameSettings.h"
+
 #include "../DxLib/DxLib.h"
 
-
+//セッター
 void C_MAP::setMapDataArray(int row,int col){
 
 	mapData = new int* [row];	
@@ -26,6 +28,11 @@ void C_MAP::setMapRowCol(int Row,int Col){
 }
 
 
+//void C_MAP::setDefCharXY(){
+//
+//
+//}
+
 void C_MAP::loadMapChip(const char* fileName,int numOfChipX,int numOfChipY){
 
 
@@ -38,30 +45,36 @@ void C_MAP::loadMapChip(const char* fileName,int numOfChipX,int numOfChipY){
 
 	void C_MAP::calLoopStartEnd(){
 
-		if(getDispUYinMap()>=0){//上端
+		if(getDispUYinMap()>=chipSizeY){//上端
 		mapSI=getDispUYinMap()/chipSizeY;
 	}
 	else{ mapSI=0; }
 
 
-	if(getDispLXinMap()>=0){//左端
+	if(getDispLXinMap()>=chipSizeX){//左端
 		mapSJ=getDispLXinMap()/chipSizeX;
 	}
 	else{mapSJ=0;}
 
 	if(getDispDYinMap()<chipSizeY*row) {//下端
 		
-		mapEI=row-
-			(chipSizeY*row-getDispDYinMap())
-			/chipSizeY+1;
+	
+
+		mapEI=getDispDYinMap()/chipSizeY+1;
 
 	}else {mapEI=row;}
 	
 	if( getDispRXinMap()<chipSizeX*col) {//右端
-		mapEJ=	col-	
-			(chipSizeX*col-getDispRXinMap())/chipSizeX ;
+		
+		mapEJ=getDispRXinMap()/chipSizeX+1;
 	}else{ mapEJ=col;}
 	
 	}
 
 
+	void C_MAP::setStartXYinMap(int X,int Y){
+		startXinMap=X;startYinMap=Y;
+
+		LX=resoX/2-chipSizeX/2-1*startXinMap;
+		UY=resoY/2-chipSizeY/2-1*startYinMap;
+	}

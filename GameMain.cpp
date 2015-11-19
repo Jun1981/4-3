@@ -28,6 +28,7 @@ int Uzura60;
 
 
 
+
 void GameMain(){
 
 
@@ -57,6 +58,9 @@ void GameMain(){
 
 
 		Game.mode=1;//ステージセレクトへ
+
+		//デバッグ
+		Game.mode=4;//
 		break;
 	case 1://タイトル
 

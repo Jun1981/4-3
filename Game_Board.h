@@ -4,5 +4,3 @@ void GameBoardInit();
 void GameBoardMain();
 void GameBoardDraw();
 void GameBoardCal();
-
-
