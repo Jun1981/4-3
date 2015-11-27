@@ -48,6 +48,13 @@ void Image::draw(int Brightness){
 	DrawGraph(x,y,gh,1);
 	SetDrawBright(255,255,255);//明るさを元に戻す
 }
+void Image::draw(int X,int Y,int Brightness){
+	SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定
+	DrawGraph(X,Y,gh,1);
+	SetDrawBright(255,255,255);//明るさを元に戻す
+}
+
+
 //DrawRotaGraph(); 回転やズームを利用 (倍率、角度）クラス内座標を使用
 void Image::draw2(double zoom,int deg,int Brightness){
 		SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定

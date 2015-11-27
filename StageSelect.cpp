@@ -34,12 +34,8 @@ namespace stgSel{
 	Image fairy;//妖精イメージ
 	Image fukidashi;//吹き出し画像クラス
 	Image board;//板枠（右上文字背景）クラス
-	
-
-
 
 	
-
 }
 using namespace stgSel;
 
@@ -74,13 +70,13 @@ void StgSelInit(){
 
 
 	//フォント系
-	//fonts.loadFont("Fonts/uzura.ttf");
+	//uzura.loadFont("Fonts/uzura.ttf");
 	//フォント作成
 	/* Uzura24= CreateFontToHandle( "うずらフォント",24,1,DX_FONTTYPE_ANTIALIASING_EDGE_4X4) ;
 	 Uzura60= CreateFontToHandle( "うずらフォント",60,1,DX_FONTTYPE_ANTIALIASING_EDGE_4X4) ;*/
 
-	 /*fonts.crtFHndl(24,"うずらフォント");
-	 fonts.crtFHndl(60,"うずらフォント");*/
+	 /*uzura.crtFHndl(24,"うずらフォント");
+	 uzura.crtFHndl(60,"うずらフォント");*/
 	
 	 
 

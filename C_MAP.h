@@ -17,6 +17,9 @@ public:
 
 	int resoX,resoY;//ディスプレイ解像度
 	int sizeX,sizeY;//マップサイズ
+
+	int nowRow,nowCol;//今の行列
+
 	//int drawW,drawH;//描画領域のサイズ
 
 		int startXinMap,startYinMap;//キャラの初期位置　マップ内

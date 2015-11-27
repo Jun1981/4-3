@@ -75,6 +75,9 @@ void C_MAP::loadMapChip(const char* fileName,int numOfChipX,int numOfChipY){
 	void C_MAP::setStartXYinMap(int X,int Y){
 		startXinMap=X;startYinMap=Y;
 
-		LX=resoX/2-chipSizeX/2-1*startXinMap;
-		UY=resoY/2-chipSizeY/2-1*startYinMap;
+			setLX(resoX/2-chipSizeX/2-startXinMap);
+				setUY(resoY/2-chipSizeY/2-startYinMap);
+
+				setDispLXinMap(-1*getLX());
+				setDispUYinMap(-1*getUY());
 	}

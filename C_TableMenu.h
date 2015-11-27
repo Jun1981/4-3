@@ -3,8 +3,33 @@
 #pragma once
 
 class C_TableMenu {
+	
+protected:
 
+	int num;//現在の項目番号
+	int dir;//メニューの方向　水平＝hori　垂直 ver
+	int row;//行
+	int column;//列
+	int numOfTables;//項目数
+
+
+	int **tableGh;//グラフィックハンドら
+
+	int **tableX,**tableY;//項目の座標
+	int **tableInitX, **tableInitY;//項目の初期座標
+
+	
+
+	int dWidth,dHeight;//描画領域の　幅　高さ
+	int dUpLeftX,dUpLeftY;//描画領域の左上の座標
+
+	int tWidth,tHeight;//各テーブルの幅　高さ
+
+	int nRow,nColumn;//今の行　列
+
+	int nowTabX,nowTabY;//今のテーブル座標
 public:	
+	int dirNext;//方向
 	//enum
 	enum Direction{hori=0,ver=1};//水平０、垂直１
 	//コンストラクタ
@@ -57,7 +82,10 @@ public:
 		
 
 	//計算関係
+	inline void reset(){num=nRow=nColumn=0;};//リセット
+
 	void calHori( );//計算 横　メニュー(項目数）　現在の番号を返す
+	void calVer( );//計算 縦　メニュー(項目数）　現在の番号を返す
     void draw(int row,int col,int Brightness);//描画
 	void draw2(int row,int col,double zoom,int deg,int Brightness);//DrawRotaGraph(); 回転やズームを利用 (倍率、角度）
 		
@@ -71,29 +99,5 @@ public:
 	inline int C_TableMenu::getTHeight(){return tHeight;}
 
 
-protected:
-
-	int num;//現在の項目番号
-	int dir;//メニューの方向　水平＝hori　垂直 ver
-	int row;//行
-	int column;//列
-	int numOfTables;//項目数
-
-
-	int **tableGh;//グラフィックハンドら
-
-	int **tableX,**tableY;//項目の座標
-	int **tableInitX, **tableInitY;//項目の初期座標
-
-	
-
-	int dWidth,dHeight;//描画領域の　幅　高さ
-	int dUpLeftX,dUpLeftY;//描画領域の左上の座標
-
-	int tWidth,tHeight;//各テーブルの幅　高さ
-
-	int nRow,nColumn;//今の行　列
-
-	int nowTabX,nowTabY;//今のテーブル座標
 };
 

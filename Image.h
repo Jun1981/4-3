@@ -29,6 +29,8 @@ public:
 	
 	//画像描画関数
 	virtual void draw(int Brightness=255);//DrawGraph現在位置(透過あり）
+	virtual void draw(int X,int Y,int Brightness);//座標指定
+	
 	virtual void draw2(double zoom=1.0,int deg=0,int Brightness=255);//DrawRotaGraph(); 回転やズームを利用 (倍率、角度）
 	virtual void draw2(int X,int Y,double zoom=1.0,int deg=0,int flip=0,int Brightness=255);//DrawRotaGraph(); 回転やズームを利用 (倍率、角度） 位置も指定
 

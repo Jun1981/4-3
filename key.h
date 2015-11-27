@@ -25,7 +25,7 @@ enum KeyName{
 	keyUp=0x04,
 	keyDown=0x08,
 	keyEnter=0x100,
-
+	keySpace=0x10
 };
 
 extern KEY key;

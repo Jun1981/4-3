@@ -107,6 +107,28 @@ void C_TableMenu::calHori(){//横メニューの計算
 
 
 }
+void C_TableMenu::calVer(){//縦メニューの計算
+
+	//下が押されたら
+	if(key_Trg==keyDown){
+		if(nRow<row-1){num++;nRow++;/*現在番号＋＋*/}//右端にイなかったら
+		else/*右端にいたら*/if(num==numOfTables-1){num=nRow=nRow=0;}//最後なら番号リセット		
+		else {num++;nRow=0;nRow+=1;/*下の行に左端に移る*/}
+
+	}	
+
+	//上を押したら
+	if(key_Trg==keyUp){
+		if(nRow>0)/*左端にイなかったら*/{num--;nRow--;}
+		else /*左上端にいたら*/if(num==0){num=numOfTables-1;nRow=row-1;nRow=row-1;}/*左上にいたら*/
+		else /*0以外*/{num--;nRow--;nRow+=row-1;/*右上に*/}
+	}
+
+	setNowTabXY();//現在テーブル位置をセット
+
+
+}
+
 //描画
 void C_TableMenu::draw(int row,int col,int Brightness){
 	SetDrawBright(Brightness,Brightness,Brightness);//明るさを設定

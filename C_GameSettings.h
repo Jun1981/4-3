@@ -43,7 +43,7 @@ void GameMain();
 void StgSelFinalize();//終了処理
 
 extern C_GameSettings Game;
-extern Fonts fonts;//フォントクラス
+extern Fonts uzura;//フォントクラス
 
 
 
