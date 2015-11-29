@@ -362,6 +362,8 @@ void GameBoardCal(){
 
 					upDown.reset();
 
+					mvMode=0;
+
 
 				}
 				else if(upDown.getNum()==DOWN){
@@ -375,6 +377,7 @@ void GameBoardCal(){
 
 					moveCnt=moveSpd;
 
+					mvMode=0;
 
 				}
 
